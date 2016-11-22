@@ -10,9 +10,7 @@ Many of the tunings are justified/explained in this blog post: https://www.perco
 While this profile has undergone testing, it comes with no gurantees and it is possible these tunings will not work well for your situation.
 
 ### Why?
-To apply all the tunings from this profile you would need to make changes in roughly 6 places on the OS and the end-result is not as friendly to troubleshoot or view.
-
-Also tunings made by hand in CentOS/Redhat 7+ generally get overriden by tuned anyways, so this prevents breakage by playing by the rules.
+Tuned's daemon runs by default on CentOS/Redhat hosts since version 7, managing the tunings of operating system via profiles. Tuning the system manually outside of using tuned profiles will often cause your settings to be overriden by tuned itself or future upgrades. Tuned profiles abstract the details of where/how to apply tunings in a consolidate, easy-to-troubleshoot location.
 
 ## Install
 *Note: The profile assumes /dev/sda is an Linux "os" disk and /dev/sdX are for database data. Adjust "devices=" in the disk section if this is not the case.*
