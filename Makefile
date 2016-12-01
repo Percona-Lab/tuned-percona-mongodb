@@ -3,6 +3,7 @@ all: install
 /etc/tuned/percona-mongodb: percona-mongodb/tuned.conf percona-mongodb/*.sh
 	if [ -d /etc/tuned ]; then \
 		cp -dpR percona-mongodb /etc/tuned/percona-mongodb; \
+		chown -R root.root /etc/tuned/percona-mongodb; \
 		echo "### 'tuned-percona-mongodb' is installed. Enable with 'make enable'."; \
 	else \
 		echo "### ERROR: cannot find tuned config dir at /etc/tuned!"; \
